@@ -142,10 +142,10 @@ class Poets_Poets_Metaboxes {
 		}
 
 		// Instructions.
-		echo '<p>' . __( 'Please enter the email address for this poet.', 'poets-poets' ) . '</p>';
+		echo '<p>' . esc_html__( 'Please enter the email address for this poet.', 'poets-poets' ) . '</p>';
 
 		// Show a text field.
-		echo '<p><input type="text" id="' . $this->email_meta_key . '" name="' . $this->email_meta_key . '" value="' . $val . '" class="regular-text" /></p>';
+		echo '<p><input type="text" id="' . esc_attr( $this->email_meta_key ) . '" name="' . esc_attr( $this->email_meta_key ) . '" value="' . esc_attr( $val ) . '" class="regular-text" /></p>';
 
 	}
 
@@ -174,10 +174,10 @@ class Poets_Poets_Metaboxes {
 		}
 
 		// Instructions.
-		echo '<p>' . __( 'Please enter just the Twitter username. No need to prefix with the @ symbol.', 'poets-poets' ) . '</p>';
+		echo '<p>' . esc_html__( 'Please enter just the Twitter username. No need to prefix with the @ symbol.', 'poets-poets' ) . '</p>';
 
 		// Show a text field.
-		echo '<p><input type="text" id="' . $this->twitter_meta_key . '" name="' . $this->twitter_meta_key . '" value="' . $val . '" class="regular-text" /></p>';
+		echo '<p><input type="text" id="' . esc_attr( $this->twitter_meta_key ) . '" name="' . esc_attr( $this->twitter_meta_key ) . '" value="' . esc_attr( $val ) . '" class="regular-text" /></p>';
 
 	}
 
@@ -206,10 +206,10 @@ class Poets_Poets_Metaboxes {
 		}
 
 		// Instructions.
-		echo '<p>' . __( 'Please enter the full website address. For example: https://twitter.com/', 'poets-poets' ) . '</p>';
+		echo '<p>' . esc_html__( 'Please enter the full website address. For example: https://twitter.com/', 'poets-poets' ) . '</p>';
 
 		// Show a text field.
-		echo '<p><input type="text" id="' . $this->website_meta_key . '" name="' . $this->website_meta_key . '" value="' . $val . '" class="regular-text" /></p>';
+		echo '<p><input type="text" id="' . esc_attr( $this->website_meta_key ) . '" name="' . esc_attr( $this->website_meta_key ) . '" value="' . esc_attr( $val ) . '" class="regular-text" /></p>';
 
 	}
 

@@ -24,10 +24,6 @@
 		<exclude name="Squiz.Commenting.BlockComment.HasEmptyLineBefore" />
 		<exclude name="Squiz.PHP.CommentedOutCode.Found" />
 
-		<!-- Remaining rules to remove. -->
-		<exclude name="WordPress.Security.EscapeOutput.OutputNotEscaped" />
-		<exclude name="WordPress.Security.NonceVerification.Missing" />
-
 	</rule>
 
 	<rule ref="WordPress.WP.I18n">

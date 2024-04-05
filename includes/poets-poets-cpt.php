@@ -560,13 +560,16 @@ class Poets_Poets_CPT {
 			return;
 		}
 
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing
 		if ( empty( $_POST['search-terms'] ) ) {
 			bp_core_redirect( bp_get_root_domain() );
 			return;
 		}
 
 		// Get form values.
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing
 		$search_terms = sanitize_text_field( wp_unslash( $_POST['search-terms'] ) );
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing
 		$search_which = ! empty( $_POST['search-which'] ) ? sanitize_text_field( wp_unslash( $_POST['search-which'] ) ) : '';
 
 		// Is it ours?

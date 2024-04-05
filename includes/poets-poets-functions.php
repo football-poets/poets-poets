@@ -32,6 +32,7 @@ function poets_poets_links() {
 		$output = implode( '<br>', [ $twitter, $website ] );
 
 		// Show it.
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo '<p>' . $output . '</p>';
 
 	}
@@ -46,6 +47,7 @@ function poets_poets_links() {
 function poets_poets_twitter() {
 
 	// Show via function below.
+	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	echo poets_poets_get_twitter();
 
 }
@@ -92,6 +94,7 @@ function poets_poets_get_twitter() {
 function poets_poets_website() {
 
 	// Show via function below.
+	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	echo poets_poets_get_website();
 
 }
