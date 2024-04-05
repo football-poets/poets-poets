@@ -4,7 +4,7 @@
  * Plugin URI: http://footballpoets.org
  * Description: Creates a Custom Post Type for the Football Poets site.
  * Author: Christian Wach
- * Version: 0.2.1
+ * Version: 0.3.0a
  * Author URI: https://haystack.co.uk
  * Text Domain: poets-poets
  * Domain Path: /languages
@@ -16,7 +16,7 @@
 defined( 'ABSPATH' ) || exit;
 
 // Set our version here.
-define( 'POETS_POETS_VERSION', '0.2.1' );
+define( 'POETS_POETS_VERSION', '0.3.0a' );
 
 // Store reference to this file.
 if ( ! defined( 'POETS_POETS_FILE' ) ) {
