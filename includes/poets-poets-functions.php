@@ -11,7 +11,7 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Display all a Poet's Links.
+ * Displays all a Poet's Links.
  *
  * At present, this just means Twitter and Website.
  *
@@ -39,7 +39,7 @@ function poets_poets_links() {
 }
 
 /**
- * Display a Poet's Twitter Account.
+ * Displays a Poet's Twitter Account.
  *
  * @since 0.1
  */
@@ -51,7 +51,7 @@ function poets_poets_twitter() {
 }
 
 /**
- * Get a Poet's Twitter Account.
+ * Gets a Poet's Twitter Account.
  *
  * @since 0.1.1
  *
@@ -85,7 +85,7 @@ function poets_poets_get_twitter() {
 }
 
 /**
- * Display a link to a Poet's Website.
+ * Displays a link to a Poet's Website.
  *
  * @since 0.1
  */
@@ -97,11 +97,11 @@ function poets_poets_website() {
 }
 
 /**
- * Get a link to a Poet's Website.
+ * Gets a link to a Poet's Website.
  *
  * @since 0.1.1
  *
- * @return str
+ * @return str The Poet's Website URL, or empty if not set.
  */
 function poets_poets_get_website() {
 

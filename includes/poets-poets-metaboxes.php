@@ -24,7 +24,7 @@ class Poets_Poets_Metaboxes {
 	 *
 	 * @since 0.2
 	 * @access public
-	 * @var object $cpt The name of the Custom Post Type
+	 * @var string
 	 */
 	public $post_type_name = 'poet';
 
@@ -33,7 +33,7 @@ class Poets_Poets_Metaboxes {
 	 *
 	 * @since 0.1
 	 * @access public
-	 * @var str
+	 * @var string
 	 */
 	public $email_meta_key = 'poets_poet_email';
 
@@ -42,7 +42,7 @@ class Poets_Poets_Metaboxes {
 	 *
 	 * @since 0.1
 	 * @access public
-	 * @var str
+	 * @var string
 	 */
 	public $twitter_meta_key = 'poets_poet_twitter';
 
@@ -51,7 +51,7 @@ class Poets_Poets_Metaboxes {
 	 *
 	 * @since 0.1
 	 * @access public
-	 * @var str
+	 * @var string
 	 */
 	public $website_meta_key = 'poets_poet_website';
 
@@ -269,10 +269,10 @@ class Poets_Poets_Metaboxes {
 		}
 
 		// Check for revision.
-		if ( $post_obj->post_type == 'revision' ) {
+		if ( 'revision' === $post_obj->post_type ) {
 
 			// Get parent.
-			if ( $post_obj->post_parent != 0 ) {
+			if ( 0 !== (int) $post_obj->post_parent ) {
 				$post = get_post( $post_obj->post_parent );
 			} else {
 				$post = $post_obj;
@@ -283,7 +283,7 @@ class Poets_Poets_Metaboxes {
 		}
 
 		// Bail if not creator post type.
-		if ( $post->post_type != $this->post_type_name ) {
+		if ( $this->post_type_name !== $post->post_type ) {
 			return;
 		}
 
@@ -331,10 +331,10 @@ class Poets_Poets_Metaboxes {
 		}
 
 		// Check for revision.
-		if ( $post_obj->post_type == 'revision' ) {
+		if ( 'revision' === $post_obj->post_type ) {
 
 			// Get parent.
-			if ( $post_obj->post_parent != 0 ) {
+			if ( 0 !== (int) $post_obj->post_parent ) {
 				$post = get_post( $post_obj->post_parent );
 			} else {
 				$post = $post_obj;
@@ -345,7 +345,7 @@ class Poets_Poets_Metaboxes {
 		}
 
 		// Bail if not creator post type.
-		if ( $post->post_type != $this->post_type_name ) {
+		if ( $post->post_type !== $this->post_type_name ) {
 			return;
 		}
 
@@ -358,12 +358,12 @@ class Poets_Poets_Metaboxes {
 		$value = isset( $_POST[ $this->twitter_meta_key ] ) ? sanitize_text_field( wp_unslash( $_POST[ $this->twitter_meta_key ] ) ) : '';
 
 		// Strip @ symbol if present.
-		if ( substr( $value, 0, 1 ) == '@' ) {
+		if ( substr( $value, 0, 1 ) === '@' ) {
 			$value = substr( $value, 1 );
 		}
 
 		// Strip https://twitter.com/ if present.
-		if ( substr( $value, 0, 20 ) == 'https://twitter.com/' ) {
+		if ( substr( $value, 0, 20 ) === 'https://twitter.com/' ) {
 			$value = substr( $value, 20 );
 		}
 
@@ -403,10 +403,10 @@ class Poets_Poets_Metaboxes {
 		}
 
 		// Check for revision.
-		if ( $post_obj->post_type == 'revision' ) {
+		if ( 'revision' === $post_obj->post_type ) {
 
 			// Get parent.
-			if ( $post_obj->post_parent != 0 ) {
+			if ( 0 !== (int) $post_obj->post_parent ) {
 				$post = get_post( $post_obj->post_parent );
 			} else {
 				$post = $post_obj;
@@ -417,7 +417,7 @@ class Poets_Poets_Metaboxes {
 		}
 
 		// Bail if not our post type.
-		if ( $post->post_type != $this->post_type_name ) {
+		if ( $post->post_type !== $this->post_type_name ) {
 			return;
 		}
 
@@ -440,8 +440,8 @@ class Poets_Poets_Metaboxes {
 	 * @since 0.1
 	 *
 	 * @param WP_Post $post The WordPress post object.
-	 * @param string $key The meta key.
-	 * @param mixed $data The data to be saved.
+	 * @param string  $key The meta key.
+	 * @param mixed   $data The data to be saved.
 	 * @return mixed $data The data that was saved.
 	 */
 	private function save_meta( $post, $key, $data = '' ) {

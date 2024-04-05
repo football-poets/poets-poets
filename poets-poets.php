@@ -1,11 +1,13 @@
 <?php
 /**
+ * Football Poets Poets
+ *
  * Plugin Name: Football Poets Poets
- * Plugin URI: http://footballpoets.org
  * Description: Creates a Custom Post Type for the Football Poets site.
- * Author: Christian Wach
- * Version: 0.3.0a
- * Author URI: https://haystack.co.uk
+ * Plugin URI:  https://github.com/football-poets/poets-poets
+ * Version:     0.3.0a
+ * Author:      Christian Wach
+ * Author URI:  https://haystack.co.uk
  * Text Domain: poets-poets
  * Domain Path: /languages
  *
@@ -47,7 +49,7 @@ class Poets_Poets {
 	 *
 	 * @since 0.1
 	 * @access public
-	 * @var object $cpt The Custom Post Type object.
+	 * @var Poets_Poets_CPT
 	 */
 	public $cpt;
 
@@ -56,7 +58,7 @@ class Poets_Poets {
 	 *
 	 * @since 0.1
 	 * @access public
-	 * @var object $metaboxes The Metaboxes object.
+	 * @var Poets_Poets_Metaboxes
 	 */
 	public $metaboxes;
 
@@ -67,13 +69,9 @@ class Poets_Poets {
 	 */
 	public function __construct() {
 
-		// Include files.
+		// Bootstrap plugin.
 		$this->include_files();
-
-		// Setup globals.
 		$this->setup_globals();
-
-		// Register hooks.
 		$this->register_hooks();
 
 	}
@@ -85,13 +83,9 @@ class Poets_Poets {
 	 */
 	public function include_files() {
 
-		// Include CPT class.
+		// Include plugin files.
 		include_once POETS_POETS_PATH . 'includes/poets-poets-cpt.php';
-
-		// Include Metaboxes class.
 		include_once POETS_POETS_PATH . 'includes/poets-poets-metaboxes.php';
-
-		// Include Theme functions.
 		include_once POETS_POETS_PATH . 'includes/poets-poets-functions.php';
 
 	}
@@ -103,10 +97,8 @@ class Poets_Poets {
 	 */
 	public function setup_globals() {
 
-		// Init CPT object.
-		$this->cpt = new Poets_Poets_CPT();
-
-		// Init Metaboxes object.
+		// Init objects.
+		$this->cpt       = new Poets_Poets_CPT();
 		$this->metaboxes = new Poets_Poets_Metaboxes();
 
 	}
@@ -175,7 +167,7 @@ class Poets_Poets {
  *
  * @since 0.1
  *
- * @return obj $poets_poets The plugin object.
+ * @return Poets_Poets $poets_poets The plugin object.
  */
 function poets_poets() {
 	static $poets_poets;
