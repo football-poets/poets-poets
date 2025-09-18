@@ -69,10 +69,38 @@ class Poets_Poets {
 	 */
 	public function __construct() {
 
+		// Initialise when all plugins are loaded.
+		add_action( 'plugins_loaded', [ $this, 'initialise' ] );
+
+	}
+
+	/**
+	 * Initialises this plugin.
+	 *
+	 * @since 0.3.1
+	 */
+	public function initialise() {
+
+		// Only do this once.
+		static $done;
+		if ( isset( $done ) && true === $done ) {
+			return;
+		}
+
 		// Bootstrap plugin.
 		$this->include_files();
 		$this->setup_globals();
 		$this->register_hooks();
+
+		/**
+		 * Broadcast that this plugin is now loaded.
+		 *
+		 * @since 0.3.2
+		 */
+		do_action( 'poets_poets/loaded' );
+
+		// We're done.
+		$done = true;
 
 	}
 
@@ -81,12 +109,12 @@ class Poets_Poets {
 	 *
 	 * @since 0.1
 	 */
-	public function include_files() {
+	private function include_files() {
 
 		// Include plugin files.
-		include_once POETS_POETS_PATH . 'includes/poets-poets-cpt.php';
-		include_once POETS_POETS_PATH . 'includes/poets-poets-metaboxes.php';
-		include_once POETS_POETS_PATH . 'includes/poets-poets-functions.php';
+		include POETS_POETS_PATH . 'includes/poets-poets-cpt.php';
+		include POETS_POETS_PATH . 'includes/poets-poets-metaboxes.php';
+		include POETS_POETS_PATH . 'includes/poets-poets-functions.php';
 
 	}
 
@@ -95,7 +123,7 @@ class Poets_Poets {
 	 *
 	 * @since 0.1
 	 */
-	public function setup_globals() {
+	private function setup_globals() {
 
 		// Init objects.
 		$this->cpt       = new Poets_Poets_CPT();
@@ -104,18 +132,14 @@ class Poets_Poets {
 	}
 
 	/**
-	 * Register WordPress hooks.
+	 * Register hook callbacks.
 	 *
 	 * @since 0.1
 	 */
-	public function register_hooks() {
+	private function register_hooks() {
 
 		// Use translation.
-		add_action( 'plugins_loaded', [ $this, 'translation' ] );
-
-		// Hooks that always need to be present.
-		$this->cpt->register_hooks();
-		$this->metaboxes->register_hooks();
+		add_action( 'init', [ $this, 'translation' ] );
 
 	}
 
@@ -143,6 +167,9 @@ class Poets_Poets {
 	 */
 	public function activate() {
 
+		// Maybe initialise.
+		$this->initialise();
+
 		// Pass through.
 		$this->cpt->activate();
 
@@ -154,6 +181,9 @@ class Poets_Poets {
 	 * @since 0.1
 	 */
 	public function deactivate() {
+
+		// Maybe initialise.
+		$this->initialise();
 
 		// Pass through.
 		$this->cpt->deactivate();
@@ -167,14 +197,21 @@ class Poets_Poets {
  *
  * @since 0.1
  *
- * @return Poets_Poets $poets_poets The plugin object.
+ * @return Poets_Poets $plugin The plugin object.
  */
 function poets_poets() {
-	static $poets_poets;
-	if ( ! isset( $poets_poets ) ) {
-		$poets_poets = new Poets_Poets();
+
+	// Store instance in static variable.
+	static $plugin = false;
+
+	// Maybe return instance.
+	if ( false === $plugin ) {
+		$plugin = new Poets_Poets();
 	}
-	return $poets_poets;
+
+	// --<
+	return $plugin;
+
 }
 
 // Bootstrap plugin.

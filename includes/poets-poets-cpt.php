@@ -44,14 +44,45 @@ class Poets_Poets_CPT {
 	 */
 	public function __construct() {
 
+		// Init when this plugin is loaded.
+		add_action( 'poets_poets/loaded', [ $this, 'initialise' ] );
+
 	}
 
 	/**
-	 * Register WordPress hooks.
+	 * Initialises this class.
+	 *
+	 * @since 0.3.1
+	 */
+	public function initialise() {
+
+		// Only do this once.
+		static $done;
+		if ( isset( $done ) && true === $done ) {
+			return;
+		}
+
+		// Bootstrap class.
+		$this->register_hooks();
+
+		/**
+		 * Broadcast that this class is now loaded.
+		 *
+		 * @since 0.3.1
+		 */
+		do_action( 'poets_poets/cpt/loaded' );
+
+		// We're done.
+		$done = true;
+
+	}
+
+	/**
+	 * Register hook callbacks.
 	 *
 	 * @since 0.1
 	 */
-	public function register_hooks() {
+	private function register_hooks() {
 
 		// Always create post types.
 		add_action( 'init', [ $this, 'post_type_create' ] );
