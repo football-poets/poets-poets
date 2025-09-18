@@ -1,17 +1,17 @@
-# Copyright (C) 2024 Christian Wach
+# Copyright (C) 2025 Christian Wach
 # This file is distributed under the same license as the Football Poets Poets plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Football Poets Poets 0.3.0a\n"
+"Project-Id-Version: Football Poets Poets 0.3.1a\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/poets-poets\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-04-05T12:40:58+00:00\n"
+"POT-Creation-Date: 2025-09-18T12:38:41+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.10.0\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: poets-poets\n"
 
 #. Plugin Name of the plugin
@@ -39,178 +39,185 @@ msgstr ""
 msgid "https://haystack.co.uk"
 msgstr ""
 
-#: includes/poets-poets-cpt.php:141
-#: includes/poets-poets-cpt.php:152
-#: includes/poets-poets-cpt.php:538
+#: includes/poets-poets-cpt.php:172
+#: includes/poets-poets-cpt.php:183
+#: includes/poets-poets-cpt.php:569
 msgid "Poets"
 msgstr ""
 
-#: includes/poets-poets-cpt.php:142
+#: includes/poets-poets-cpt.php:173
 msgid "Poet"
 msgstr ""
 
-#: includes/poets-poets-cpt.php:143
+#: includes/poets-poets-cpt.php:174
 msgid "Add New"
 msgstr ""
 
-#: includes/poets-poets-cpt.php:144
+#: includes/poets-poets-cpt.php:175
 msgid "Add New Poet"
 msgstr ""
 
-#: includes/poets-poets-cpt.php:145
+#: includes/poets-poets-cpt.php:176
 msgid "Edit Poet"
 msgstr ""
 
-#: includes/poets-poets-cpt.php:146
+#: includes/poets-poets-cpt.php:177
 msgid "New Poet"
 msgstr ""
 
-#: includes/poets-poets-cpt.php:147
+#: includes/poets-poets-cpt.php:178
 msgid "All Poets"
 msgstr ""
 
-#: includes/poets-poets-cpt.php:148
+#: includes/poets-poets-cpt.php:179
 msgid "View Poet"
 msgstr ""
 
-#: includes/poets-poets-cpt.php:149
+#: includes/poets-poets-cpt.php:180
 msgid "Search Poets"
 msgstr ""
 
-#: includes/poets-poets-cpt.php:150
+#: includes/poets-poets-cpt.php:181
 msgid "No matching Poet found"
 msgstr ""
 
-#: includes/poets-poets-cpt.php:151
+#: includes/poets-poets-cpt.php:182
 msgid "No Poets found in Trash"
 msgstr ""
 
-#: includes/poets-poets-cpt.php:157
+#: includes/poets-poets-cpt.php:188
 msgid "A poet post type"
 msgstr ""
 
 #. translators: %s: The URL of the Post.
-#: includes/poets-poets-cpt.php:224
+#: includes/poets-poets-cpt.php:255
+#, php-format
 msgid "Poet updated. <a href=\"%s\">View poet</a>"
 msgstr ""
 
-#: includes/poets-poets-cpt.php:229
+#: includes/poets-poets-cpt.php:260
 msgid "Custom field updated."
 msgstr ""
 
-#: includes/poets-poets-cpt.php:230
+#: includes/poets-poets-cpt.php:261
 msgid "Custom field deleted."
 msgstr ""
 
-#: includes/poets-poets-cpt.php:231
+#: includes/poets-poets-cpt.php:262
 msgid "Poet updated."
 msgstr ""
 
 #. Translators: %s: date and time of the revision.
-#: includes/poets-poets-cpt.php:240
+#: includes/poets-poets-cpt.php:271
+#, php-format
 msgid "Poet restored to revision from %s"
 msgstr ""
 
 #. translators: %s: The URL of the Poem.
-#: includes/poets-poets-cpt.php:251
+#: includes/poets-poets-cpt.php:282
+#, php-format
 msgid "Poet published. <a href=\"%s\">View poet</a>"
 msgstr ""
 
-#: includes/poets-poets-cpt.php:256
+#: includes/poets-poets-cpt.php:287
 msgid "Poet saved."
 msgstr ""
 
 #. translators: %s: The preview URL.
-#: includes/poets-poets-cpt.php:261
+#: includes/poets-poets-cpt.php:292
+#, php-format
 msgid "Poet submitted. <a target=\"_blank\" href=\"%s\">Preview poet</a>"
 msgstr ""
 
 #. translators: 1: The Post date, 2: The permalink.
-#: includes/poets-poets-cpt.php:268
+#: includes/poets-poets-cpt.php:299
+#, php-format
 msgid "Poet scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s\">Preview poet</a>"
 msgstr ""
 
 #. translators: Publish box date format, see https://php.net/date
-#: includes/poets-poets-cpt.php:270
+#: includes/poets-poets-cpt.php:301
 msgid "M j, Y @ G:i"
 msgstr ""
 
 #. translators: %s: The preview URL.
-#: includes/poets-poets-cpt.php:277
+#: includes/poets-poets-cpt.php:308
+#, php-format
 msgid "Poet draft updated. <a target=\"_blank\" href=\"%s\">Preview poet</a>"
 msgstr ""
 
-#: includes/poets-poets-cpt.php:311
+#: includes/poets-poets-cpt.php:342
 msgctxt "taxonomy general name"
 msgid "Poet Types"
 msgstr ""
 
-#: includes/poets-poets-cpt.php:312
+#: includes/poets-poets-cpt.php:343
 msgctxt "taxonomy singular name"
 msgid "Poet Type"
 msgstr ""
 
-#: includes/poets-poets-cpt.php:313
+#: includes/poets-poets-cpt.php:344
 msgid "Search Poet Types"
 msgstr ""
 
-#: includes/poets-poets-cpt.php:314
+#: includes/poets-poets-cpt.php:345
 msgid "All Poet Types"
 msgstr ""
 
-#: includes/poets-poets-cpt.php:315
+#: includes/poets-poets-cpt.php:346
 msgid "Parent Poet Type"
 msgstr ""
 
-#: includes/poets-poets-cpt.php:316
+#: includes/poets-poets-cpt.php:347
 msgid "Parent Poet Type:"
 msgstr ""
 
-#: includes/poets-poets-cpt.php:317
+#: includes/poets-poets-cpt.php:348
 msgid "Edit Poet Type"
 msgstr ""
 
-#: includes/poets-poets-cpt.php:318
+#: includes/poets-poets-cpt.php:349
 msgid "Update Poet Type"
 msgstr ""
 
-#: includes/poets-poets-cpt.php:319
+#: includes/poets-poets-cpt.php:350
 msgid "Add New Poet Type"
 msgstr ""
 
-#: includes/poets-poets-cpt.php:320
+#: includes/poets-poets-cpt.php:351
 msgid "New Poet Type Name"
 msgstr ""
 
-#: includes/poets-poets-cpt.php:321
+#: includes/poets-poets-cpt.php:352
 msgid "Poet Types"
 msgstr ""
 
 #. translators: %s: The name of the taxonomy.
-#: includes/poets-poets-cpt.php:398
+#: includes/poets-poets-cpt.php:429
+#, php-format
 msgid "Show All %s"
 msgstr ""
 
-#: includes/poets-poets-metaboxes.php:94
+#: includes/poets-poets-metaboxes.php:125
 msgid "Email Address"
 msgstr ""
 
-#: includes/poets-poets-metaboxes.php:103
+#: includes/poets-poets-metaboxes.php:134
 msgid "Twitter Account"
 msgstr ""
 
-#: includes/poets-poets-metaboxes.php:112
+#: includes/poets-poets-metaboxes.php:143
 msgid "Website"
 msgstr ""
 
-#: includes/poets-poets-metaboxes.php:145
+#: includes/poets-poets-metaboxes.php:176
 msgid "Please enter the email address for this poet."
 msgstr ""
 
-#: includes/poets-poets-metaboxes.php:177
+#: includes/poets-poets-metaboxes.php:208
 msgid "Please enter just the Twitter username. No need to prefix with the @ symbol."
 msgstr ""
 
-#: includes/poets-poets-metaboxes.php:209
+#: includes/poets-poets-metaboxes.php:240
 msgid "Please enter the full website address. For example: https://twitter.com/"
 msgstr ""
